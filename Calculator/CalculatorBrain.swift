@@ -17,6 +17,7 @@ struct CalculatorBrain {
         case unaryOperation((Double) -> Double)
         case binaryOperation((Double, Double) -> Double)
         case equals
+        case dot
     }
     
     private var operations : Dictionary<String, Operation> = [
@@ -25,12 +26,16 @@ struct CalculatorBrain {
         "√"     : Operation.unaryOperation(sqrt),
         "cos"   : Operation.unaryOperation(cos),
         "±"     : Operation.unaryOperation({ -$0 }),
+        "1/x"   : Operation.unaryOperation({ 1/$0 }),
+        "x²"    : Operation.unaryOperation({ $0 * $0 }),
         "×"     : Operation.binaryOperation({ $0 * $1 }),
         "÷"     : Operation.binaryOperation({ $0 / $1 }),
         "+"     : Operation.binaryOperation({ $0 + $1 }),
         "-"     : Operation.binaryOperation({ $0 - $1 }),
         "="     : Operation.equals
     ]
+    
+    private var makingFloatingPointNumber = false;
     
     mutating func performOperation(_ symbol: String){
         if let operation = operations[symbol]{
@@ -48,6 +53,10 @@ struct CalculatorBrain {
                 }
             case .equals:
                 performPendingBinaryOperation()
+            case .dot:
+                if !makingFloatingPointNumber {
+                    
+                }
             }
         }
     }
