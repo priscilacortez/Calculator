@@ -30,7 +30,10 @@ class ViewController: UIViewController {
     @IBAction func touchDot(_ sender: UIButton) {
         let dot = sender.currentTitle!
         
+        print("touching dot")
+        
         if !userIsInTheMiddleOfTyping && !userIsInTheMiddleOfMakingDecimal{
+            print("User not in the middle of typing and making a decimal")
             display.text = "0" + dot
             userIsInTheMiddleOfTyping = true
             userIsInTheMiddleOfMakingDecimal = true
@@ -40,8 +43,8 @@ class ViewController: UIViewController {
             display.text = textCurrentlyInDisplay + dot
             userIsInTheMiddleOfMakingDecimal = true
         }
-        
     }
+    
     
     var displayValue: Double {
         get {
@@ -61,12 +64,19 @@ class ViewController: UIViewController {
             userIsInTheMiddleOfMakingDecimal = false
         }
         
+        print("User is in the middle of typing \(userIsInTheMiddleOfTyping)")
+        print("User is in the middle of making decimal \(userIsInTheMiddleOfMakingDecimal)")
+        
         if let mathematicalSymbol = sender.currentTitle {
             brain.performOperation(mathematicalSymbol)
         }
         
         if let result = brain.result {
-            displayValue = result
+            if result.isEqual(to: 0){
+                display.text = "0"
+            } else {
+                displayValue = result
+            }
         }
     }
 }
