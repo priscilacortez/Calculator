@@ -77,7 +77,7 @@ struct CalculatorBrain {
                 performPendingBinaryOperation()
             case .clear:
                 pendingBinaryOperation = nil
-                accumulator = 0
+                accumulator = nil
                 allOperationsMade = ""
                 temporaryOperationMade = ""
                 wroteConstant = false
@@ -93,6 +93,7 @@ struct CalculatorBrain {
     
     mutating func setOperand(_ operand: Double){
         accumulator = operand
+        print("accumulator: " + String(operand))
         
         if !wroteConstant {
             temporaryOperationMade = String(operand)

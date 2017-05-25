@@ -74,6 +74,10 @@ class ViewController: UIViewController {
         
         if let mathematicalSymbol = sender.currentTitle {
             brain.performOperation(mathematicalSymbol)
+            
+            if mathematicalSymbol == "C"{
+                display.text = "0"
+            }
         }
         
         if let result = brain.result {
