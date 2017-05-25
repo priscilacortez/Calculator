@@ -69,9 +69,6 @@ class ViewController: UIViewController {
             userIsInTheMiddleOfMakingDecimal = false
         }
         
-        print("User is in the middle of typing \(userIsInTheMiddleOfTyping)")
-        print("User is in the middle of making decimal \(userIsInTheMiddleOfMakingDecimal)")
-        
         if let mathematicalSymbol = sender.currentTitle {
             brain.performOperation(mathematicalSymbol)
             
@@ -91,7 +88,7 @@ class ViewController: UIViewController {
         // set the operations display
         if brain.pendingResult {
             operationsDisplay.text = brain.description + "..."
-        } else if brain.description != ""{
+        } else if !brain.description.isEmpty {
             operationsDisplay.text = brain.description + "="
         } else {
             operationsDisplay.text = brain.description

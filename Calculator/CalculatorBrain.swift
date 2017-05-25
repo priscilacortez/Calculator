@@ -93,11 +93,10 @@ struct CalculatorBrain {
     
     mutating func setOperand(_ operand: Double){
         accumulator = operand
-        print("accumulator: " + String(operand))
+        temporaryOperationMade = String(operand)
         
         if !wroteConstant {
             temporaryOperationMade = String(operand)
-            print("Temporary Operation: \(temporaryOperationMade)")
         }
     }
     
