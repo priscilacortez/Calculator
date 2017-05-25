@@ -78,8 +78,8 @@ class ViewController: UIViewController {
         }
         
         if let result = brain.result {
-            if result.isEqual(to: 0){
-                display.text = "0"
+            if result.truncatingRemainder(dividingBy: 1) == 0{
+                display.text = String(Int(result))
             } else {
                 displayValue = result
             }
@@ -87,9 +87,9 @@ class ViewController: UIViewController {
         
         // set the operations display
         if brain.pendingResult {
-            operationsDisplay.text = brain.description + "..."
+            operationsDisplay.text = brain.description + " ..."
         } else if !brain.description.isEmpty {
-            operationsDisplay.text = brain.description + "="
+            operationsDisplay.text = brain.description + " ="
         } else {
             operationsDisplay.text = brain.description
         }

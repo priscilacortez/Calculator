@@ -96,7 +96,11 @@ struct CalculatorBrain {
         temporaryOperationMade = String(operand)
         
         if !wroteConstant {
-            temporaryOperationMade = String(operand)
+            if (operand.truncatingRemainder(dividingBy: 1) == 0){
+                temporaryOperationMade = String(Int(operand))
+            } else {
+                temporaryOperationMade = String(operand)
+            }
         }
     }
     
