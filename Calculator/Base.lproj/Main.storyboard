@@ -26,22 +26,34 @@
                                 <rect key="frame" x="20" y="20" width="374" height="708"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="XYR-SY-hdx">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <color key="backgroundColor" red="0.30429899690000001" green="0.73485487699999996" blue="0.90632337330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="N2q-kI-Jm8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" red="0.97985506952225332" green="1" blue="0.99965027505046689" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1m-fe-khZ">
+                                        <rect key="frame" x="0.0" y="40" width="374" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="R3n-2a-UPv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5OH-6m-381">
-                                        <rect key="frame" x="0.0" y="46" width="374" height="662"/>
+                                        <rect key="frame" x="0.0" y="80" width="374" height="628"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eVl-Bn-U6s">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="124.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="117.66666666666666"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQH-Hm-6ub">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="124.33333333333334"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.65414507772020725" green="0.65414507772020725" blue="0.65414507772020725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="C"/>
                                                         <connections>
@@ -49,9 +61,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6q-0Z-mL6">
-                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="124.33333333333334"/>
+                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.65414507769999997" green="0.65414507769999997" blue="0.65414507769999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="π"/>
                                                         <connections>
@@ -59,9 +71,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y46-ao-RBT">
-                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="124.33333333333334"/>
+                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.65414507772020725" green="0.65414507772020725" blue="0.65414507772020725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="e"/>
                                                         <connections>
@@ -69,9 +81,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-dn-7FM">
-                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="124.33333333333334"/>
+                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.65414507772020725" green="0.65414507772020725" blue="0.65414507772020725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="√"/>
                                                         <connections>
@@ -79,9 +91,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnh-0O-JW7">
-                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="124.33333333333334"/>
+                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.99821573500000005" green="0.42872247190000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="÷"/>
                                                         <connections>
@@ -91,12 +103,12 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fwk-ny-Egg">
-                                                <rect key="frame" x="0.0" y="134.33333333333331" width="374" height="124.33333333333331"/>
+                                                <rect key="frame" x="0.0" y="127.66666666666667" width="374" height="117.66666666666664"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pck-Fu-EDi">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="124.33333333333334"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.65414507772020725" green="0.65414507772020725" blue="0.65414507772020725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="1/x"/>
                                                         <connections>
@@ -104,9 +116,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irp-0M-vOp">
-                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="124.33333333333334"/>
+                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="7"/>
                                                         <connections>
@@ -114,9 +126,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjF-4t-nHd">
-                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="124.33333333333334"/>
+                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="8"/>
                                                         <connections>
@@ -124,9 +136,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLe-Ta-BGv">
-                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="124.33333333333334"/>
+                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="9"/>
                                                         <connections>
@@ -134,9 +146,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMg-d4-MbK">
-                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="124.33333333333334"/>
+                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="117.66666666666666"/>
                                                         <color key="backgroundColor" red="0.99821573500000005" green="0.42872247190000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="×"/>
                                                         <connections>
@@ -146,12 +158,12 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4DL-EM-ZkO">
-                                                <rect key="frame" x="0.0" y="268.66666666666669" width="374" height="124.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="255.33333333333331" width="374" height="117.33333333333337"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKi-oG-VYU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="124.66666666666663"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="117.33333333333337"/>
                                                         <color key="backgroundColor" red="0.65414507772020725" green="0.65414507772020725" blue="0.65414507772020725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="x²"/>
                                                         <connections>
@@ -159,9 +171,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWA-pg-8eq">
-                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="124.66666666666663"/>
+                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="117.33333333333337"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="4"/>
                                                         <connections>
@@ -169,9 +181,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7L-mF-WNa">
-                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="124.66666666666663"/>
+                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="117.33333333333337"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="5"/>
                                                         <connections>
@@ -179,9 +191,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhn-UH-IXw">
-                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="124.66666666666663"/>
+                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="117.33333333333337"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="6"/>
                                                         <connections>
@@ -189,9 +201,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gM8-I2-wnW">
-                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="124.66666666666663"/>
+                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="117.33333333333337"/>
                                                         <color key="backgroundColor" red="0.99821573500000005" green="0.42872247190000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="-"/>
                                                         <connections>
@@ -201,12 +213,12 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d9Q-AP-jCy">
-                                                <rect key="frame" x="0.0" y="403.33333333333337" width="374" height="124.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="382.66666666666663" width="374" height="117.66666666666669"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTZ-Ol-BZK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="124.33333333333331"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="117.66666666666669"/>
                                                         <color key="backgroundColor" red="0.65414507772020725" green="0.65414507772020725" blue="0.65414507772020725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="cos"/>
                                                         <connections>
@@ -214,9 +226,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7m-FJ-dDg">
-                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="124.33333333333331"/>
+                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="117.66666666666669"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="1"/>
                                                         <connections>
@@ -224,9 +236,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lep-y8-UM6">
-                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="124.33333333333331"/>
+                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="117.66666666666669"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="2"/>
                                                         <connections>
@@ -234,9 +246,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGe-Sw-DNx">
-                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="124.33333333333331"/>
+                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="117.66666666666669"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="3"/>
                                                         <connections>
@@ -244,9 +256,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daN-xR-HRd">
-                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="124.33333333333331"/>
+                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="117.66666666666669"/>
                                                         <color key="backgroundColor" red="0.99821573500000005" green="0.42872247190000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="+"/>
                                                         <connections>
@@ -256,12 +268,12 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A0z-WY-lcc">
-                                                <rect key="frame" x="0.0" y="537.66666666666652" width="374" height="124.33333333333337"/>
+                                                <rect key="frame" x="0.0" y="510.33333333333343" width="374" height="117.66666666666657"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggK-Zo-oES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="124.33333333333337"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.666666666666671" height="117.66666666666663"/>
                                                         <color key="backgroundColor" red="0.65414507772020725" green="0.65414507772020725" blue="0.65414507772020725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="sin"/>
                                                         <connections>
@@ -269,9 +281,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikK-YJ-OaF">
-                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="124.33333333333337"/>
+                                                        <rect key="frame" x="76.666666666666657" y="0.0" width="66.999999999999972" height="117.66666666666663"/>
                                                         <color key="backgroundColor" red="0.65414507772020725" green="0.65414507772020725" blue="0.65414507772020725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="±"/>
                                                         <connections>
@@ -279,9 +291,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Khw-1o-MOC">
-                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="124.33333333333337"/>
+                                                        <rect key="frame" x="153.66666666666666" y="0.0" width="66.666666666666686" height="117.66666666666663"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="0"/>
                                                         <connections>
@@ -289,9 +301,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2P-mP-IeI">
-                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="124.33333333333337"/>
+                                                        <rect key="frame" x="230.33333333333331" y="0.0" width="66.999999999999943" height="117.66666666666663"/>
                                                         <color key="backgroundColor" red="0.82025178108808294" green="0.82025178108808294" blue="0.82025178108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="."/>
                                                         <connections>
@@ -299,9 +311,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nf-Lw-OQb">
-                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="124.33333333333337"/>
+                                                        <rect key="frame" x="307.33333333333326" y="0.0" width="66.666666666666686" height="117.66666666666663"/>
                                                         <color key="backgroundColor" red="0.99821573500000005" green="0.42872247190000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="="/>
                                                         <connections>
@@ -313,6 +325,11 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="XYR-SY-hdx" firstAttribute="top" secondItem="PL3-wj-5fC" secondAttribute="top" id="29m-Qn-2Cl"/>
+                                    <constraint firstItem="XYR-SY-hdx" firstAttribute="leading" secondItem="PL3-wj-5fC" secondAttribute="leading" id="63p-9A-wCb"/>
+                                    <constraint firstAttribute="trailing" secondItem="XYR-SY-hdx" secondAttribute="trailing" id="Wcd-AQ-717"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -325,6 +342,7 @@
                     </view>
                     <connections>
                         <outlet property="display" destination="XYR-SY-hdx" id="W4v-Wh-PAY"/>
+                        <outlet property="operationsDisplay" destination="q1m-fe-khZ" id="ipj-td-D5f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

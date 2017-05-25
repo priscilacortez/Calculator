@@ -11,6 +11,11 @@ import Foundation
 struct CalculatorBrain {
     
     private var accumulator: Double?
+    private var pendingBinaryOperation: PendingBinaryOperation?
+    private var allOperationsMade = ""
+    private var temporaryOperationMade = ""
+    private var wroteConstant = false
+    private var makingFloatingPointNumber = false
     
     private enum Operation {
         case constant(Double)
@@ -25,6 +30,7 @@ struct CalculatorBrain {
         "e"     : Operation.constant(M_E),
         "√"     : Operation.unaryOperation(sqrt),
         "cos"   : Operation.unaryOperation(cos),
+        "sin"   : Operation.unaryOperation(sin),
         "±"     : Operation.unaryOperation({ -$0 }),
         "1/x"   : Operation.unaryOperation({ 1/$0 }),
         "x²"    : Operation.unaryOperation({ $0 * $0 }),
@@ -36,19 +42,34 @@ struct CalculatorBrain {
         "C"     : Operation.clear
     ]
     
-    private var makingFloatingPointNumber = false;
+    private var complexWrittenUnaryOperations : Dictionary<String, (String) -> String> = [
+        "1/x"   : {"1/(\($0))"},
+        "x²"    : {"(\($0))²"},
+    ]
     
     mutating func performOperation(_ symbol: String){
         if let operation = operations[symbol]{
             switch operation {
             case .constant(let value):
                 accumulator = value
+                temporaryOperationMade = symbol
+                wroteConstant = true
             case .unaryOperation(let function):
                 if accumulator != nil {
                     accumulator = function(accumulator!)
+                    
+                    if temporaryOperationMade.isEmpty {
+                        allOperationsMade = writeUnaryOperation(with: symbol, on: allOperationsMade)
+                    } else {
+                        temporaryOperationMade = writeUnaryOperation(with: symbol, on: temporaryOperationMade)
+                    }
                 }
             case .binaryOperation(let function):
                 if accumulator != nil {
+                    allOperationsMade += "\(temporaryOperationMade) \(symbol) "
+                    temporaryOperationMade = ""
+                    wroteConstant = false
+                    
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
                     accumulator = nil
                 }
@@ -57,18 +78,48 @@ struct CalculatorBrain {
             case .clear:
                 pendingBinaryOperation = nil
                 accumulator = 0
+                allOperationsMade = ""
+                temporaryOperationMade = ""
+                wroteConstant = false
             }
         }
     }
     
-    private mutating func performPendingBinaryOperation(){
-        if pendingBinaryOperation != nil && accumulator != nil {
-            accumulator = pendingBinaryOperation!.perform(with: accumulator!)
-            pendingBinaryOperation = nil
+    mutating func resetDescription(){
+        temporaryOperationMade = ""
+        allOperationsMade = ""
+        wroteConstant = false
+    }
+    
+    mutating func setOperand(_ operand: Double){
+        accumulator = operand
+        
+        if !wroteConstant {
+            temporaryOperationMade = String(operand)
+            print("Temporary Operation: \(temporaryOperationMade)")
         }
     }
     
-    private var pendingBinaryOperation: PendingBinaryOperation?
+    var result: Double? {
+        get {
+            return accumulator
+        }
+    }
+    
+    var pendingResult: Bool {
+        get {
+            if pendingBinaryOperation != nil {
+                return true
+            }
+            return false
+        }
+    }
+    
+    var description: String {
+        get {
+            return allOperationsMade + temporaryOperationMade
+        }
+    }
     
     private struct PendingBinaryOperation {
         let function: (Double, Double) -> Double
@@ -79,13 +130,23 @@ struct CalculatorBrain {
         }
     }
     
-    mutating func setOperand(_ operand: Double){
-        accumulator = operand
+    private mutating func writeUnaryOperation(with symbol: String, on operationsMade: String ) -> String {
+        if let writeComplexOperation = complexWrittenUnaryOperations[symbol]{
+           return writeComplexOperation(operationsMade)
+       
+        }
+        return "\(symbol) (\(operationsMade))"
     }
     
-    var result: Double? {
-        get {
-            return accumulator
+    private mutating func performPendingBinaryOperation(){
+        if pendingBinaryOperation != nil && accumulator != nil {
+            // Add operand that we have accumulated to all the operations made so far
+            allOperationsMade += temporaryOperationMade
+            temporaryOperationMade = ""
+            wroteConstant = false
+            
+            accumulator = pendingBinaryOperation!.perform(with: accumulator!)
+            pendingBinaryOperation = nil
         }
     }
 }

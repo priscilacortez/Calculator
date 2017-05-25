@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var operationsDisplay: UILabel!
     
     var userIsInTheMiddleOfTyping = false
     var userIsInTheMiddleOfMakingDecimal = false
@@ -24,6 +25,10 @@ class ViewController: UIViewController {
         } else {
             display.text = digit
             userIsInTheMiddleOfTyping = true
+            
+            if !brain.pendingResult {
+                brain.resetDescription()
+            }
         }
     }
     
@@ -77,6 +82,15 @@ class ViewController: UIViewController {
             } else {
                 displayValue = result
             }
+        }
+        
+        // set the operations display
+        if brain.pendingResult {
+            operationsDisplay.text = brain.description + "..."
+        } else if brain.description != ""{
+            operationsDisplay.text = brain.description + "="
+        } else {
+            operationsDisplay.text = brain.description
         }
     }
 }
