@@ -45,7 +45,7 @@ struct CalculatorBrain {
     private var complexWrittenUnaryOperations : Dictionary<String, (String) -> String> = [
         "1/x"   : {"1/(\($0))"},
         "x²"    : {"(\($0))²"},
-    ]
+        ]
     
     mutating func performOperation(_ symbol: String){
         if let operation = operations[symbol]{
@@ -74,7 +74,6 @@ struct CalculatorBrain {
                         temporaryOperationMade += constantToWrite
                         constantToWrite = ""
                     }
-                    print("Constant to write: /(constantToWrite)")
                     allOperationsMade += "\(temporaryOperationMade) \(symbol) "
                     temporaryOperationMade = ""
                     
@@ -82,7 +81,6 @@ struct CalculatorBrain {
                         performPendingBinaryOperation()
                     }
                     
-                    print("PendingBinaryOperation made with: \(symbol) and \(accumulator!)")
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
                     accumulator = nil
                 }
@@ -96,9 +94,7 @@ struct CalculatorBrain {
             case .clear:
                 pendingBinaryOperation = nil
                 accumulator = nil
-                allOperationsMade = ""
-                temporaryOperationMade = ""
-                constantToWrite = ""
+                resetDescription()
             }
         }
     }
@@ -114,13 +110,13 @@ struct CalculatorBrain {
         print("Accumulator: " + String(operand))
         temporaryOperationMade = String(operand)
         
-        //if !wroteConstant {
-            if (operand.truncatingRemainder(dividingBy: 1) == 0){
-                temporaryOperationMade = String(Int(operand))
-            } else {
-                temporaryOperationMade = String(operand)
-            }
-        //}
+        // Remove trailing .0 if number is an integer
+        if (operand.truncatingRemainder(dividingBy: 1) == 0){
+            temporaryOperationMade = String(Int(operand))
+        } else {
+            temporaryOperationMade = String(operand)
+        }
+        
     }
     
     var result: Double? {
@@ -155,8 +151,8 @@ struct CalculatorBrain {
     
     private mutating func writeUnaryOperation(with symbol: String, on operationsMade: String ) -> String {
         if let writeComplexOperation = complexWrittenUnaryOperations[symbol]{
-           return writeComplexOperation(operationsMade)
-       
+            return writeComplexOperation(operationsMade)
+            
         }
         return "\(symbol) (\(operationsMade))"
     }
