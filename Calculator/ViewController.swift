@@ -19,11 +19,21 @@ class ViewController: UIViewController {
     @IBAction func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         
-        if userIsInTheMiddleOfTyping{
+        if digit == "." && userIsInTheMiddleOfMakingDecimal{
+            return
+        }
+        
+        if digit == "." {
+            userIsInTheMiddleOfMakingDecimal = true
+        }
+        
+        if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = display.text!
             display.text = textCurrentlyInDisplay + digit
+   
         } else {
-            display.text = digit
+            // if digit is a dot, then do "0." if not then just the digit
+            display.text = (digit == ".") ? "0" + digit : digit
             userIsInTheMiddleOfTyping = true
             
             if !brain.pendingResult {
@@ -31,25 +41,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func touchDot(_ sender: UIButton) {
-        let dot = sender.currentTitle!
-        
-        print("touching dot")
-        
-        if !userIsInTheMiddleOfTyping && !userIsInTheMiddleOfMakingDecimal{
-            print("User not in the middle of typing and making a decimal")
-            display.text = "0" + dot
-            userIsInTheMiddleOfTyping = true
-            userIsInTheMiddleOfMakingDecimal = true
-        }
-        else if !userIsInTheMiddleOfMakingDecimal {
-            let textCurrentlyInDisplay = display.text!
-            display.text = textCurrentlyInDisplay + dot
-            userIsInTheMiddleOfMakingDecimal = true
-        }
-    }
-    
     
     var displayValue: Double {
         get {

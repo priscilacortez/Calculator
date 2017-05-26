@@ -45,7 +45,7 @@ struct CalculatorBrain {
     private var complexWrittenUnaryOperations : Dictionary<String, (String) -> String> = [
         "1/x"   : {"1/(\($0))"},
         "x²"    : {"(\($0))²"},
-        ]
+    ]
     
     mutating func performOperation(_ symbol: String){
         if let operation = operations[symbol]{
@@ -53,6 +53,7 @@ struct CalculatorBrain {
             case .constant(let value):
                 accumulator = value
                 
+                // if not currently writing a function and a constant was clicked, then starting a new expression
                 if pendingBinaryOperation == nil {
                     resetDescription()
                 }
@@ -63,13 +64,14 @@ struct CalculatorBrain {
                     accumulator = function(accumulator!)
                     
                     if temporaryOperationMade.isEmpty {
-                        allOperationsMade = writeUnaryOperation(with: symbol, on: allOperationsMade)
+                        allOperationsMade = applyUnaryOperation(with: symbol, on: allOperationsMade)
                     } else {
-                        temporaryOperationMade = writeUnaryOperation(with: symbol, on: temporaryOperationMade)
+                        temporaryOperationMade = applyUnaryOperation(with: symbol, on: temporaryOperationMade)
                     }
                 }
             case .binaryOperation(let function):
                 if accumulator != nil {
+                    // if there is a constant we need to write, then we are definitely using constant in binary expression
                     if !constantToWrite.isEmpty {
                         temporaryOperationMade += constantToWrite
                         constantToWrite = ""
@@ -77,6 +79,7 @@ struct CalculatorBrain {
                     allOperationsMade += "\(temporaryOperationMade) \(symbol) "
                     temporaryOperationMade = ""
                     
+                    // perform binary operation with current accumulater if we already had one pending
                     if pendingBinaryOperation != nil {
                         performPendingBinaryOperation()
                     }
@@ -107,7 +110,6 @@ struct CalculatorBrain {
     
     mutating func setOperand(_ operand: Double){
         accumulator = operand
-        print("Accumulator: " + String(operand))
         temporaryOperationMade = String(operand)
         
         // Remove trailing .0 if number is an integer
@@ -149,7 +151,7 @@ struct CalculatorBrain {
         }
     }
     
-    private mutating func writeUnaryOperation(with symbol: String, on operationsMade: String ) -> String {
+    private mutating func applyUnaryOperation(with symbol: String, on operationsMade: String ) -> String {
         if let writeComplexOperation = complexWrittenUnaryOperations[symbol]{
             return writeComplexOperation(operationsMade)
             
