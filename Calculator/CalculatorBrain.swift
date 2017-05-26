@@ -14,7 +14,7 @@ struct CalculatorBrain {
     private var pendingBinaryOperation: PendingBinaryOperation?
     private var allOperationsMade = ""
     private var temporaryOperationMade = ""
-    private var wroteConstant = false
+    private var constantToWrite = ""
     private var makingFloatingPointNumber = false
     
     private enum Operation {
@@ -52,8 +52,12 @@ struct CalculatorBrain {
             switch operation {
             case .constant(let value):
                 accumulator = value
-                temporaryOperationMade = symbol
-                wroteConstant = true
+                
+                if pendingBinaryOperation == nil {
+                    resetDescription()
+                }
+                
+                constantToWrite = symbol
             case .unaryOperation(let function):
                 if accumulator != nil {
                     accumulator = function(accumulator!)
@@ -66,21 +70,35 @@ struct CalculatorBrain {
                 }
             case .binaryOperation(let function):
                 if accumulator != nil {
+                    if !constantToWrite.isEmpty {
+                        temporaryOperationMade += constantToWrite
+                        constantToWrite = ""
+                    }
+                    print("Constant to write: /(constantToWrite)")
                     allOperationsMade += "\(temporaryOperationMade) \(symbol) "
                     temporaryOperationMade = ""
-                    wroteConstant = false
                     
+                    if pendingBinaryOperation != nil {
+                        performPendingBinaryOperation()
+                    }
+                    
+                    print("PendingBinaryOperation made with: \(symbol) and \(accumulator!)")
                     pendingBinaryOperation = PendingBinaryOperation(function: function, firstOperand: accumulator!)
                     accumulator = nil
                 }
             case .equals:
                 performPendingBinaryOperation()
+                
+                if !constantToWrite.isEmpty {
+                    allOperationsMade = constantToWrite
+                    constantToWrite = ""
+                }
             case .clear:
                 pendingBinaryOperation = nil
                 accumulator = nil
                 allOperationsMade = ""
                 temporaryOperationMade = ""
-                wroteConstant = false
+                constantToWrite = ""
             }
         }
     }
@@ -88,20 +106,21 @@ struct CalculatorBrain {
     mutating func resetDescription(){
         temporaryOperationMade = ""
         allOperationsMade = ""
-        wroteConstant = false
+        constantToWrite = ""
     }
     
     mutating func setOperand(_ operand: Double){
         accumulator = operand
+        print("Accumulator: " + String(operand))
         temporaryOperationMade = String(operand)
         
-        if !wroteConstant {
+        //if !wroteConstant {
             if (operand.truncatingRemainder(dividingBy: 1) == 0){
                 temporaryOperationMade = String(Int(operand))
             } else {
                 temporaryOperationMade = String(operand)
             }
-        }
+        //}
     }
     
     var result: Double? {
@@ -145,9 +164,13 @@ struct CalculatorBrain {
     private mutating func performPendingBinaryOperation(){
         if pendingBinaryOperation != nil && accumulator != nil {
             // Add operand that we have accumulated to all the operations made so far
+            if !constantToWrite.isEmpty {
+                temporaryOperationMade += constantToWrite
+                constantToWrite = ""
+            }
+            
             allOperationsMade += temporaryOperationMade
             temporaryOperationMade = ""
-            wroteConstant = false
             
             accumulator = pendingBinaryOperation!.perform(with: accumulator!)
             pendingBinaryOperation = nil
